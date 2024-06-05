@@ -18,11 +18,11 @@ body {
     align-items: center;
 }
 
-.playlist-cards{
+.playlist-card{
     flex-basis: 25%;
     border: 1px solid grey;
     border-radius: 15px;
-    margin-bottom: 50px
+    margin-bottom: 50px;
 
 }
 
@@ -54,8 +54,8 @@ padding-left:10px
 
 
 #modal-container {
-    display: none;
-    position: fixed;
+visibility:hidden;
+position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
@@ -84,4 +84,18 @@ padding-left:10px
     color: red;
     text-decoration: none;
     cursor: pointer;
+ }
+
+.modal-playlist-container{
+    display: flex;
+}
+.modal-playlist-image{
+
+}
+.modal-playlist-text{
+    margin-left: 10px;
+}
+
+ .song-container{
+    /* display: flex; */
  }
