@@ -14,10 +14,30 @@
 <body id="root">
     <header>
         <!-- Your header content here -->
-        <h1>Music Playlist Explorer</h1>
+        <nav id="nav">
+            <img id='logo' src="./assets/img/music-logo4.png"/>
+            <div id="nav-content-1">
+                <h1 id="page-header">Music Playlist Explorer</h1>
+                <div id="left-nav-content">
+                    <div>Home</div>
+                    <div>Playlists</div>
+                    <div>Songs</div>
+                    <div>Artists</div>
+                </div>
+            </div>
+
+            <div id="nav-content-2">
+                <div id="left-nav-content">
+                    <div>Hello, Izuchukwu</div>
+                </div>
+            </div>
+
+        </div>
+        </nav>
     </header>
 
     <main id = "main">
+
         <div id="playlists">
 
             </div>
@@ -32,10 +52,16 @@
                 <img src="" class="modal-playlist-image"/>
                 <div class="modal-playlist-text">
                     <div class="modal-playlist-title"></div>
-                    <div class="modal-playlist-creator-name"></div>
+                    <div class="modal-playlist-creator-container">
+                        Curated by:
+                        <div class="modal-playlist-creator-name"></div>
+                    </div>
                 </div>
             </div>
+                            <div class='song-header'>Songs</div>
+
             <div id="modal-song-info">
+
                 <!-- <div class="song-container">
                     <img src="" class="song-img"/>
                     <div class="song-text">
