@@ -5,10 +5,10 @@ let playlists = document.getElementById('playlists');
 
 let playlist_images = document.querySelectorAll('.playlist-image');
 
-const playlistContainer = playlistData['playlists'].map((item, index1) => {
+const playlistContainer = playlistData['playlists'].map((item, index) => {
 
     return `
-    <div class="playlist-card playlist-${index1}" id ="${index1}">
+    <div class="playlist-card playlist-${index}" id ="${index}">
         <div class='image-container'><img class="playlist-image" src = "${item['playlist_art']}"></div>
 
         <div class = 'playlist-text-container'>
@@ -68,13 +68,15 @@ function closeModal(){
 
 }
 
-playlist_images.forEach((image, index)=>{
-    image.addEventListener('click', (event)=>{
-        // let playlist_index = event.target.closest('.playlist-card').id
-        console.log('yes')
-        // if(event.target.closest('.playlist-card')){
-            // openModal(playlistData.playlists[index], playlistData.playlists[index]['songs']);
-        // }
+let images_container = document.querySelectorAll('.image-container');
+
+images_container.forEach((image, index)=>{
+        image.addEventListener('click', (event)=>{
+        let playlist_index = event.target.closest('.playlist-card').id
+        console.log(index)
+        if(event.target.closest('.playlist-card')){
+            openModal(playlistData.playlists[index], playlistData.playlists[index]['songs']);
+        }
 
     })
 
@@ -93,15 +95,48 @@ playlist_images.forEach((image, index)=>{
 
 closeBtn.addEventListener('click', closeModal);
 
+
 //Liking playlists
 let likeBtn = document.querySelectorAll('.like-btn');
-let like = document.querySelector('.like');
 
-function likePlaylist(likeCount, index){
- likeCount += 1;
+likeBtn.forEach((btn, index) => {
+    btn.addEventListener('click', (event) => {
+        // let like_index = event.target.closest('.playlist-card').id
+        playlistData.playlists[index]['likeCount'] += 1;
+
+        console.log(playlistData.playlists[index]['likeCount'])
+
+        let likeCount = document.querySelectorAll('.like-count');
+
+        likeCount.forEach((item, index) => {
+        item.textContent = playlistData.playlists[index]['likeCount'];
+
+        btn.classList.remove('fa-regular');
+        btn.classList.add('fa-solid');
+        btn.style.color = 'red';
+})
+
+    })
+})
+
+function shufflePlaylist(songArray){
+
+    for(let i = songArray.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [songArray[i], songArray[j]] = [songArray[j], songArray[i]];
+    }
+    console.log(songArray);
+    return songArray;
 }
 
-like.addEventListener('click', (event) => {
-    let like_index = event.target.closest('.playlist-card').id
-    likePlaylist(playlistData.playlists[like_index]['likeCount'], like_index);
+let shuffleBtns = document.querySelectorAll('.shuffle-btn');
+
+shuffleBtns.forEach((btn, index) => {
+    btn.addEventListener('click', (event) => {
+    shufflePlaylist(playlistData.playlists[index]['songs']);
+
+    playlistData.playlists[index]['songs'] = shufflePlaylist(playlistData.playlists[index]['songs']);
+})
+//only the first song data is shuffling. continue from here.
 })

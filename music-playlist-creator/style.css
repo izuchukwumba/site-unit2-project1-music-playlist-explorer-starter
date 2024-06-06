@@ -3,8 +3,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
-    overflow: none;
-    height: 100dvh;
+    /* overflow: none; */
+    /* height: 100dvh; */
 }
 #nav{
     display:flex;
@@ -13,7 +13,7 @@ body {
     background-color: white;
     width:100%;
     box-shadow: 3px 4px 25px black;
-    position: fixed;
+    /* position: fixed; */
 }
 #logo{
     width:5%
@@ -231,4 +231,12 @@ font-size: 0.8rem;
 }
 .song-duration{
 padding-right:15px
+}
+
+.shuffle-btn{
+border:1px solid black;
+width: fit-content;
+padding:5px;
+margin: 5px 0;
+cursor: pointer;
 }
