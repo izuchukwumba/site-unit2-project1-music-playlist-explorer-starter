@@ -35,9 +35,7 @@
         </div>
         </nav>
     </header>
-
     <main id = "main">
-
         <div id="playlists">
 
             </div>
@@ -57,9 +55,13 @@
                         <div class="modal-playlist-creator-name"></div>
                     </div>
                 </div>
+                <div class="shuffle-container"></div>
             </div>
-                            <div class='song-header'>Songs</div>
-                            <div class='shuffle-btn'>Shuffle</div>
+
+            <div class='song-header'>Songs</div>
+            <div class="shuffle-container">
+                 <div class='shuffle-btn'>Shuffle</div>
+            </div>
 
             <div id="modal-song-info">
 
@@ -76,8 +78,154 @@
         </div>
     </div>
 
-    <footer>
-        <!-- Your footer content here -->
+    <div id="add-playlist-btn">Add New Playlist</div>
+    <form id="new-playlist-form">
+        <div>General Playlist Info</div>
+        <div id="close-playlist-form-btn">&times;</div>
+        <div id="new-playlist-info">
+            <div>
+                <label for = 'new-playlist-name'>Playlist Name:</label>
+                <input type="text" id = 'new-playlist-name' name="new-playlist-name"/>
+            </div>
+            <div>
+                <label for = 'new-playlist-creator'>Creator:</label>
+                <input type="text" id = 'new-playlist-creator' name="new-playlist-creator"/>
+            </div>
+            <div>
+                <label for = 'new-playlist-image'>Image URL:</label>
+                <input type="text" id = 'new-playlist-image' name="new-playlist-image"/>
+            </div>
+        </div>
+<hr/>
+        <div>Add Songs</div>
+
+        <div id="add-song-container">
+            <div id="new-song-1" class="new-song">
+                <div>
+                    <label for = 'new-song-title'>Song Title:</label>
+                    <input type="text" id = 'new-song-title1' name="new-song-title"/>
+                </div>
+                <div>
+                    <label for = 'new-song-artist'>Artist:</label>
+                    <input type="text" id = 'new-song-artist1' name = 'new-song-artist'/>
+                </div>
+                <div>
+                    <label for = 'new-song-album'>Album:</label>
+                    <input type="text" id = 'new-song-album1' name = 'new-song-album'/>
+                </div>
+                <div>
+                    <label for = 'new-song-image'>Image URL:</label>
+                    <input type="text" id = 'new-song-image1' name = 'new-song-image'/>
+                </div>
+                <div>
+                    <label for = 'new-song-duration'>Duration:</label>
+                    <input type="text" id = 'new-song-duration1' name = 'new-song-duration'/>
+                </div>
+            </div>
+            <div id="new-song-2" class="new-song">
+                <div>
+                    <label for = 'new-song-title'>Song Title:</label>
+                    <input type="text" id = 'new-song-title2' name="new-song-title"/>
+                </div>
+                <div>
+                    <label for = 'new-song-artist'>Artist:</label>
+                    <input type="text" id = 'new-song-artist2' name = 'new-song-artist'/>
+                </div>
+                <div>
+                    <label for = 'new-song-album'>Album:</label>
+                    <input type="text" id = 'new-song-album2' name = 'new-song-album'/>
+                </div>
+                <div>
+                    <label for = 'new-song-image'>Image URL:</label>
+                    <input type="text" id = 'new-song-image2' name = 'new-song-image'/>
+                </div>
+                <div>
+                    <label for = 'new-song-duration'>Duration:</label>
+                    <input type="text" id = 'new-song-duration2' name = 'new-song-duration'/>
+                </div>
+            </div>
+            <div id="new-song-3" class="new-song">
+                <div>
+                    <label for = 'new-song-title'>Song Title:</label>
+                    <input type="text" id = 'new-song-title3' name="new-song-title"/>
+                </div>
+                <div>
+                    <label for = 'new-song-artist'>Artist:</label>
+                    <input type="text" id = 'new-song-artist3' name = 'new-song-artist'/>
+                </div>
+                <div>
+                    <label for = 'new-song-album'>Album:</label>
+                    <input type="text" id = 'new-song-album3' name = 'new-song-album'/>
+                </div>
+                <div>
+                    <label for = 'new-song-image'>Image URL:</label>
+                    <input type="text" id = 'new-song-image3' name = 'new-song-image'/>
+                </div>
+                <div>
+                    <label for = 'new-song-duration'>Duration:</label>
+                    <input type="text" id = 'new-song-duration3' name = 'new-song-duration'/>
+                </div>
+            </div>
+            <div id="new-song-4" class="new-song">
+                <div>
+                    <label for = 'new-song-title'>Song Title:</label>
+                    <input type="text" id = 'new-song-title4' name="new-song-title"/>
+                </div>
+                <div>
+                    <label for = 'new-song-artist'>Artist:</label>
+                    <input type="text" id = 'new-song-artist4' name = 'new-song-artist'/>
+                </div>
+                <div>
+                    <label for = 'new-song-album'>Album:</label>
+                    <input type="text" id = 'new-song-album4' name = 'new-song-album'/>
+                </div>
+                <div>
+                    <label for = 'new-song-image'>Image URL:</label>
+                    <input type="text" id = 'new-song-image4' name = 'new-song-image'/>
+                </div>
+                <div>
+                    <label for = 'new-song-duration'>Duration:</label>
+                    <input type="text" id = 'new-song-duration4' name = 'new-song-duration'/>
+                </div>
+            </div>
+            <div id="new-song-5" class="new-song">
+                <div>
+                    <label for = 'new-song-title'>Song Title:</label>
+                    <input type="text" id = 'new-song-title5' name="new-song-title"/>
+                </div>
+                <div>
+                    <label for = 'new-song-artist'>Artist:</label>
+                    <input type="text" id = 'new-song-artist5' name = 'new-song-artist'/>
+                </div>
+                <div>
+                    <label for = 'new-song-album'>Album:</label>
+                    <input type="text" id = 'new-song-album5' name = 'new-song-album'/>
+                </div>
+                <div>
+                    <label for = 'new-song-image'>Image URL:</label>
+                    <input type="text" id = 'new-song-image5' name = 'new-song-image'/>
+                </div>
+                <div>
+                    <label for = 'new-song-duration'>Duration:</label>
+                    <input type="text" id = 'new-song-duration5' name = 'new-song-duration'/>
+                </div>
+
+
+            </div>
+
+
+
+
+     </div>
+
+        <div id="submit-playlist-btn-container">
+            <div id="submit-playlist-btn">Add Playlist</div>
+        </div>
+    </form>
+
+    <footer id="footer">
+        <div class="footer-text footer-text-1">Music Playlist Explorer</div>
+        <div class="footer-text footer-text-2">Created by Izuchukwu Mba &copy; 2024</div>
     </footer>
     <script src="data/data.js"></script>
     <script src="script.js"></script>
