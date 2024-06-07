@@ -149,9 +149,17 @@ padding-left:10px
 .trash-btn{
     cursor: pointer;
     margin-right: 10px;
+    margin-left:15px
 }
 .trash-btn:hover{
     color:red
+}
+.edit-btn{
+    cursor: pointer;
+}
+
+.edit-btn:hover{
+    color:blue
 }
 
 #modal-container {

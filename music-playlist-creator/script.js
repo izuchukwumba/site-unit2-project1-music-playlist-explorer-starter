@@ -22,9 +22,16 @@ function renderPlaylistData(playlistArray){
                 <i class="like-btn like fa-regular fa-heart"></i>
                 <div class="like-count">${item['likeCount']}</div>
             </div>
-                <i class="trash-btn fa-regular fa-trash-can"></i>
+            <div>
+            <i class="edit-btn fa-regular fa-pen-to-square"></i>
+            <i class="trash-btn fa-regular fa-trash-can"></i>
             </div>
-        </div>`;
+            </div>
+            </div>
+
+
+        </div>
+        `;
 
 
 
@@ -241,8 +248,6 @@ let [newSongTitle5, newSongArtist5, newSongAlbum5, newSongImageURL5, newSongDura
 
 function addNewPlaylist(allPlaylists){
 
-
-
     let playlist = {'playlistID': allPlaylists['playlists'].length-1, 'playlist_name': newPlaylistName.value, 'playlist_creator': newPlaylistCreator.value, 'likeCount': 0, 'playlist_art': newPlaylistImage.value, 'songs': [] }
 
     let songs = [
@@ -284,7 +289,13 @@ submitNewPlaylist.addEventListener('click', (event) => {
 
 
 //Editing Playlists
+let editPlaylistBtns = document.querySelectorAll('.edit-btn');
 
+
+function editPlaylist(playlists, index){
+
+
+}
 
 
 //Deleting Playlists
@@ -312,3 +323,20 @@ trashBtns.forEach((btn, index) => {
 }
 
 addTrashcanEventListerners()
+
+//Search
+let searchBar = document.getElementById('search-input');
+searchBar.addEventListener('input', (event) => {
+    searchPlaylist(searchBar.value, event);
+})
+
+function searchPlaylist(searchTerm, event){
+    let query = event.target.value;
+
+    let filteredPlaylists = playlistData['playlists'].filter((playlist) => {
+        return playlist['playlist_name'].toLowerCase().includes(query.toLowerCase());
+    })
+    renderPlaylistData(filteredPlaylists);
+}
+
+//Sort
