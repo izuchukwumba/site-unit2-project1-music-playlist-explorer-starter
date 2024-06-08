@@ -36,21 +36,30 @@
         </nav>
     </header>
 
-    <div id="search">
-        <input type="text" id="search-input" name="search-input"/>
-    </div>
-    <div id="sort-btns">
-        <div id="sort-playlist-name-AZ">By playlist name (a-z)</div>
-        <div id="sort-creator-name-AZ">By creator name (a-z)</div>
-        <div id="sort-like-count-AZ"></div>
+    <div id="buttons">
+        <div id="search">
+            <input type="text" id="search-input" name="search-input" placeholder="Search by playlist name..."/>
+        </div>
+
+        <div id="second-buttons">
+            <div id="sort-btns">
+                <select name="sort-options" id="sort-options">
+                    <option value=''>Choose sorting option</option>
+                    <option value="playlist-name-AZ">By playlist name (a-z)</option>
+                    <option value="playlist-name-ZA">By playlist name (z-a)</option>
+                    <option value="creator-name-AZ">By creator name (a-z)</option>
+                    <option value="creator-name-ZA">By creator name (z-a)</option>
+                    <option value="like-count-AZ">By number of likes (a-z)</option>
+                    <option value="like-count-ZA">By number of likes (z-a)</option>
+                </select>
+            </div>
+            <div id="add-playlist-btn">Add New Playlist</div>
+        </div>
     </div>
 
     <main id = "main">
         <div id="playlists">
-
             </div>
-
-        </div>
     </main>
 
     <div id="modal-container">
@@ -88,7 +97,6 @@
         </div>
     </div>
 
-    <div id="add-playlist-btn">Add New Playlist</div>
     <form id="new-playlist-form">
         <div>General Playlist Info</div>
         <div id="close-playlist-form-btn">&times;</div>

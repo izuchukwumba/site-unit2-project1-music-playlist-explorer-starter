@@ -340,3 +340,148 @@ function searchPlaylist(searchTerm, event){
 }
 
 //Sort
+let sort_options = document.getElementById('sort-options');
+console.log(sort_options);
+
+function sortPlaylistName_AZ(playlistArray){
+    playlistArray.sort((a, b) => {
+        let firstLetterofPlaylistName_A = a['playlist_name'][0].toLowerCase();
+        let firstLetterofPlaylistName_B = b['playlist_name'][0].toLowerCase();
+
+        if(firstLetterofPlaylistName_A < firstLetterofPlaylistName_B){
+            return -1;
+        }
+        if(firstLetterofPlaylistName_A > firstLetterofPlaylistName_B){
+            return 1;
+        }
+        return 0;
+    })
+
+    renderPlaylistData(playlistArray);
+    addTrashcanEventListerners()
+    addLikeEventListener();
+    addImageEventListeners();
+}
+
+
+function sortPlaylistName_ZA(playlistArray){
+    playlistArray.sort((a, b) => {
+        let firstLetterofPlaylistName_A = a['playlist_name'][0].toLowerCase();
+        let firstLetterofPlaylistName_B = b['playlist_name'][0].toLowerCase();
+
+        if(firstLetterofPlaylistName_A < firstLetterofPlaylistName_B){
+            return 1;
+        }
+        if(firstLetterofPlaylistName_A > firstLetterofPlaylistName_B){
+            return -1;
+        }
+        return 0;
+    })
+
+    renderPlaylistData(playlistArray);
+    addTrashcanEventListerners()
+    addLikeEventListener();
+    addImageEventListeners();
+}
+
+function sortCreatorName_AZ(playlistArray){
+    playlistArray.sort((a, b) => {
+        let firstLetterofCreatorName_A = a['playlist_creator'][0].toLowerCase();
+        let firstLetterofCreatorName_B = b['playlist_creator'][0].toLowerCase();
+
+        if(firstLetterofCreatorName_A < firstLetterofCreatorName_B){
+            return -1;
+        }
+        if(firstLetterofCreatorName_A > firstLetterofCreatorName_B){
+            return 1;
+        }
+        return 0;
+    })
+
+    renderPlaylistData(playlistArray);
+    addTrashcanEventListerners()
+    addLikeEventListener();
+    addImageEventListeners();
+
+}
+
+function sortCreatorName_ZA(playlistArray){
+    playlistArray.sort((a, b) => {
+        let firstLetterofCreatorName_A = a['playlist_creator'][0].toLowerCase();
+        let firstLetterofCreatorName_B = b['playlist_creator'][0].toLowerCase();
+
+        if(firstLetterofCreatorName_A < firstLetterofCreatorName_B){
+            return 1;
+        }
+        if(firstLetterofCreatorName_A > firstLetterofCreatorName_B){
+            return -1;
+        }
+        return 0;
+    })
+
+    renderPlaylistData(playlistArray);
+    addTrashcanEventListerners()
+    addLikeEventListener();
+    addImageEventListeners();
+}
+
+function sortLikeCount_AZ(playlistArray){
+    playlistArray.sort((a, b) => {
+
+        if(a['likeCount'] < b['likeCount']){
+            return -1;
+        }
+        if(a['likeCount'] < b['likeCount']){
+            return 1;
+        }
+        return;
+    })
+
+    renderPlaylistData(playlistArray);
+    addTrashcanEventListerners()
+    addLikeEventListener();
+    addImageEventListeners();
+}
+function sortLikeCount_ZA(playlistArray){
+    playlistArray.sort((a, b) => {
+
+        if(a['likeCount'] < b['likeCount']){
+            return 1;
+        }
+        if(a['likeCount'] < b['likeCount']){
+            return -1;
+        }
+        return 0;
+    })
+
+    renderPlaylistData(playlistArray);
+    addTrashcanEventListerners()
+    addLikeEventListener();
+    addImageEventListeners();
+}
+
+sort_options.addEventListener('change', (event) => {
+    sortBy(event.target.value);
+})
+
+function sortBy(value){
+    if(value == 'playlist-name-AZ'){
+        sortPlaylistName_AZ(playlistData['playlists']);
+}
+    if(value == 'playlist-name-ZA'){
+        sortPlaylistName_ZA(playlistData['playlists']);
+    }
+    if(value == 'creator-name-AZ'){
+        sortCreatorName_AZ(playlistData['playlists']);
+    }
+    if(value == 'creator-name-ZA'){
+        sortCreatorName_ZA(playlistData['playlists']);
+    }
+    if(value == 'like-count-AZ'){
+        sortLikeCount_AZ(playlistData['playlists']);
+    }
+    if(value == 'like-count-ZA'){
+        sortLikeCount_ZA(playlistData['playlists']);
+    }
+
+}

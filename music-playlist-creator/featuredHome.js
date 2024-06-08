@@ -2,7 +2,9 @@
 
 let playlistData = data
 
-let randomPlaylist = playlistData['playlists'][Math.floor(playlistData['playlists'].length * Math.random())]
+let randomPlaylist = playlistData['playlists'][Math.floor(playlistData['playlists'].length * Math.random())
+]
+
 
 document.querySelector('.featured-playlist-image').src = randomPlaylist['playlist_art'];
 document.querySelector('.featured-playlist-title').innerText = randomPlaylist['playlist_name'];
