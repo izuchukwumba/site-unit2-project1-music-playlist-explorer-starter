@@ -43,7 +43,7 @@ body {
     display: flex;
 }
 #left-nav-content div{
- padding-right: 40px;
+ /* padding-right: 40px; */
  cursor: pointer;
 }
 #right-nav-content{
@@ -111,6 +111,8 @@ body {
     display: flex;
     justify-content: start;
     /* height:20px; */
+    min-width: 200px;
+    min-height:200px
 }
 .playlist-image{
 width: 100%;
@@ -351,7 +353,7 @@ label{
     width:100%;
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 15px;
 }
 #search-input{
@@ -396,4 +398,15 @@ select{
 }
 .footer-text-2{
  font-size: 0.8rem;
+}
+#left-nav-featured{
+    border: 1px solid black;
+    border-radius: 1px;
+    width:fit-content;
+    padding: 7px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+#left-nav-user{
+    padding-right: 20px;
 }

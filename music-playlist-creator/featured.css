@@ -38,7 +38,7 @@ body {
     display: flex;
 }
 #left-nav-content div{
- padding-right: 40px;
+ /* padding-right: 40px; */
  cursor: pointer;
 }
 #right-nav-content{
@@ -57,12 +57,13 @@ body {
 
 /*Main Page Content*/
 main{
-    margin: 30px 20px
+    margin: 30px 20px;
 }
 .featured-playlist-container{
     display: flex;
     justify-content: center;
     align-items: end;
+    box-shadow: 10px 15px 15px solid;
 }
 .featured-playlist-image{
     width:20%;
@@ -93,4 +94,42 @@ main{
 }
 .featured-songs-container{
 display: flex;
+margin-top: 80px;
+margin-left:50px
+
+}
+
+.featured-song-title-container{
+    display: flex;
+
+}
+
+.song-container-f{
+    display: flex;
+    flex-direction: column;
+}
+.song-container-f div{
+    padding-bottom:50px;
+    padding-right: 50px
+}
+.artist-container-f{
+    display: flex;
+    flex-direction: column;
+
+}
+.artist-container-f div{
+    padding-bottom:50px;
+    padding-right: 50px
+
+}
+
+.album-container-f{
+    display: flex;
+    flex-direction: column;
+
+}
+.album-container-f div{
+    padding-bottom:50px;
+    padding-right: 50px
+
 }

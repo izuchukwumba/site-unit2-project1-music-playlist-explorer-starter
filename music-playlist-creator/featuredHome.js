@@ -13,17 +13,38 @@ document.querySelector('.featured-playlist-details').innerText = `${randomPlayli
 
 let featuredSongsContainer = document.querySelector('.featured-songs-container')
 
-let featuredSongs = randomPlaylist['songs'].map((song,index)=>{
+let featuredSongTitles = randomPlaylist['songs'].map((song,index)=>{
     return`
     <div class = 'featured-song-title'>${song['title']}</div>
-    <div class = 'featured-song-artist'>${song['artist']}</div>
-    <div class = 'featured-song-title'>${song['album']}</div>
     `
 
 }).join('')
 
-featuredSongsContainer.innerHTML = featuredSongs
+let featuredSongArtist = randomPlaylist['songs'].map((song,index)=>{
+    return`
+    <div class = 'featured-song-artist'>${song['artist']}</div>
+    `
 
+}).join('')
+
+let featuredAlbum = randomPlaylist['songs'].map((song,index)=>{
+    return`
+    <div class = 'featured-album'>${song['album']}</div>
+    `
+
+}).join('')
+
+let songContainer = document.querySelector('.song-container-f')
+let artistContainer = document.querySelector('.artist-container-f')
+let albumContainer = document.querySelector('.album-container-f')
+
+songContainer.innerHTML = featuredSongTitles
+artistContainer.innerHTML = featuredSongArtist
+albumContainer.innerHTML = featuredAlbum
+
+// featuredSongsContainer.innerHTML += songContainer
+// featuredSongsContainer.innerHTML += artistContainer
+// featuredSongsContainer.innerHTML += albumContainer
 
 //Create a dynamic table
 //Myabe make it with grid
